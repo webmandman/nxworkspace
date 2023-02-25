@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Employee Portal</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="./assets/fonts/material-icons.v97.woff2" rel="preload" as="font" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Roboto, sans-serif;
+            font-size: 16px
+        }
+        
+        @keyframes spinner {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+        
+        .spinner:before {
+            content: '';
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            margin-top: -15px;
+            margin-left: -15px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            border-top-color: #07d;
+            animation: spinner .6s linear infinite
+        }
+        
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Material Icons'), local('MaterialIcons-Regular'), url(assets/fonts/material-icons.v97.woff2) format('woff2')
+        }
+        
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: 400;
+            font-style: normal;
+            font-size: 24px;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga'
+        }
+    </style>
+</head>
+
+<body class="mat-typography">
+
+    <app-root>
+        <!--Application Bootstrap Loading Indicator-->
+        <div class="flex h-screen">
+            <div class="m-auto">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </app-root>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+@import '../profile.component.scss';
+
+@include personal;
+
+.done{
+    font-size: 20px;
+    text-align: center;
+}
+.icon-success {
+    color:limegreen;
+}
+.icon-fail {
+    color:maroon;
+}
+.icon-large {
+    font-size: 30px;
+}

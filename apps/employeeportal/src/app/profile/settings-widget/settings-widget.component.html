@@ -1,0 +1,8 @@
+<div>
+  <div class="mt-8 ml-5">
+    <h3 class="mat-h3">Public Profile</h3>
+    <app-user-settings
+      [employeeid]="employee?.employeeid"
+      (settingUpdated)="settingUpdated($event)"></app-user-settings>
+  </div>
+</div>

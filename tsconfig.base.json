@@ -1,0 +1,39 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@psomas/shared/data/constants": [
+        "libs/shared/data/constants/src/index.ts"
+      ],
+      "@psomas/shared/data/environments": [
+        "libs/shared/data/environments/src/index.ts"
+      ],
+      "@psomas/shared/data/models": ["libs/shared/data/models/src/index.ts"],
+      "@psomas/shared/data/services": [
+        "libs/shared/data/services/src/index.ts"
+      ],
+      "@psomas/shared/gaurds": ["libs/shared/gaurds/src/index.ts"],
+      "@psomas/shared/ui/employee-photo": [
+        "libs/shared/ui/employee-photo/src/index.ts"
+      ],
+      "@psomas/shared/ui/widget-wrapper": [
+        "libs/shared/ui/widget-wrapper/src/index.ts"
+      ],
+      "@psomas/shared/util": ["libs/shared/util/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

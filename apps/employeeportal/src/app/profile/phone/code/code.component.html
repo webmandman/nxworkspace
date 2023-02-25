@@ -1,0 +1,26 @@
+<div class="m-8">
+  <div class="m-8">
+    <p>We have sent you a text message with a code. Please enter the code below.</p>
+    <!-- TODO: Try again generate another code and resent -->
+  </div>
+  <form [formGroup]="codeForm">
+    <div class="grid place-content-center">
+      <div class="text-center">
+        <mat-form-field appearance="fill" class="w-96">
+          <mat-label>
+            Enter Validation Code Here
+          </mat-label>
+          <input matInput type="text" formControlName="code" required />
+          <mat-error *ngIf="(codeFormControl['code'].touched || codeFormControl['code'].dirty)
+                      && codeFormControl['code'].errors?.['invalid']">
+            {{ invalidMessage }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-raised-button type="button" [routerLink]="'/profile'">Cancel</button>
+      </div>
+
+    </div>
+  </form>
+</div>

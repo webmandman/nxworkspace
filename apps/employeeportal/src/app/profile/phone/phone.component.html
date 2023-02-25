@@ -1,0 +1,51 @@
+<mat-card class="container mx-auto w-full md:w-1/2 xl2:w-1/3 m-4">
+    <div class="text-center">
+        <h2 class="mat-h2">{{ title }}</h2>
+    </div>
+    <kendo-stepper
+        #stepper
+        [steps]="steps"
+        [stepType]="'full'"
+        [(currentStep)]="currentStep">
+    </kendo-stepper>
+    <div class="m-8" *ngIf="currentStep===0 && invalid === true">
+        <p class="status-box fail">
+            <span class="k-icon k-i-close icon-fail"></span>
+            The phone number is invalid.</p>
+    </div>
+
+    <app-phone-form *ngIf="currentStep===0"
+       [phone]="old"
+       (cellSubmitted)="cellSubmitted($event)"></app-phone-form>
+
+    <app-phone-code *ngIf="currentStep===1"
+        (onVerify)="onVerify($event)"
+        (onChangeRequest)="onChangeRequest($event)"></app-phone-code>
+
+    <div class="m-8" *ngIf="currentStep===2 && !verification">
+        <p class="m-8 done">
+            <span class="k-icon k-i-check-circle icon-success icon-large"></span>
+            Change Request Complete</p>
+        <div class="m-8" *ngIf="newphone">
+            <p><strong>New Cellphone Number</strong>: {{newphone.cellnumber}}</p>
+            <p>This new phone number has been submitted to HR. HR will notify you when your address has been updated on all systems.</p>
+            <p>Thank you,<br>Human Resources</p>
+        </div>
+        <div class="m-8">
+          <button mat-raised-button color="primary" [routerLink]="'/profile'">Close</button>
+        </div>
+
+    </div>
+    <div class="m-8" *ngIf="currentStep===2 && verification" class="container">
+        <p class="m-8 done">
+            <span class="k-icon k-i-check-circle icon-success icon-large"></span>
+            Cellphone Number Verified</p>
+        <div class="m-8">
+            <p>Your cellphone number has been verified.</p>
+            <p>Thank you,<br>Human Resources</p>
+        </div>
+        <div class="m-8">
+          <button mat-raised-button color="primary" [routerLink]="'/profile'">Close</button>
+        </div>
+    </div>
+</mat-card>

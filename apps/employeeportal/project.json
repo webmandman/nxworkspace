@@ -1,0 +1,93 @@
+{
+    "projectType": "application",
+    "sourceRoot": "apps/employeeportal/src",
+    "prefix": "psomas",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "outputs": [
+                "{options.outputPath}"
+            ],
+            "options": {
+                "outputPath": "../hr/employee/portal",
+                "baseHref": "/hr/employee/portal/",
+                "index": "apps/employeeportal/src/index.html",
+                "main": "apps/employeeportal/src/main.ts",
+                "polyfills": "apps/employeeportal/src/polyfills.ts",
+                "tsConfig": "apps/employeeportal/tsconfig.app.json",
+                "assets": [
+                    "apps/employeeportal/src/assets",
+                    "apps/employeeportal/src/images"
+                ],
+                "styles": [
+                    "apps/employeeportal/src/styles.scss"
+                ],
+                "scripts": []
+            },
+            "configurations": {
+                "production": {
+                    "budgets": [{
+                            "type": "initial",
+                            "maximumWarning": "1.5mb",
+                            "maximumError": "1.5mb"
+                        },
+                        {
+                            "type": "anyComponentStyle",
+                            "maximumWarning": "2kb",
+                            "maximumError": "4kb"
+                        }
+                    ],
+                    "fileReplacements": [],
+                    "outputHashing": "all"
+                },
+                "development": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "vendorChunk": true,
+                    "extractLicenses": false,
+                    "sourceMap": true,
+                    "namedChunks": true
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+                "production": {
+                    "browserTarget": "employeeportal:build:production"
+                },
+                "development": {
+                    "browserTarget": "employeeportal:build:development"
+                }
+            },
+            "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+                "browserTarget": "employeeportal:build"
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "apps/employeeportal/**/*.ts",
+                    "apps/employeeportal/**/*.html"
+                ]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": [
+                "coverage/apps/employeeportal"
+            ],
+            "options": {
+                "jestConfig": "apps/employeeportal/jest.config.ts",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": []
+}

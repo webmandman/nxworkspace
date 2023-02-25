@@ -1,0 +1,35 @@
+
+.done{
+    font-size: 20px;
+    text-align: center;
+}
+.address {
+    margin: 13px auto 35px;
+    text-align: center;
+}
+.status-box {
+    border-width: 1px;
+    border-style: solid;
+    padding: 8px;
+}
+.success {
+    border-color: mediumseagreen;
+    color:limegreen;
+}
+.fail {
+    border-color: lightpink;
+    color: maroon;
+}
+.icon-success {
+    color:limegreen;
+}
+.icon-fail {
+    color:maroon;
+}
+.icon-large {
+    font-size: 30px;
+}
+.note {
+    border: 1px solid lightgray;
+    padding: 75px;
+}

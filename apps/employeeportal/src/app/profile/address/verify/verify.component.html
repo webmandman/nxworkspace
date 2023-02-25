@@ -1,0 +1,8 @@
+<div class="grid place-content-center m-8 space-y-5">
+    <h3 class="mat-h3">Does your address look correct on the map?</h3>
+    <ng-content></ng-content>
+    <div class="space-x-5">
+        <button mat-raised-button type="button" (click)="onVerifyFail()">Nope, not my address!</button>
+        <button mat-raised-button color="primary" (click)="verify()">Yes, that's it!</button>
+    </div>
+</div>

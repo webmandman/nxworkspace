@@ -1,0 +1,61 @@
+<div class="lg:container lg:mx-auto p-4">
+
+    <mat-card class="comp-card">
+        <!--Card Header-->
+        <mat-card-header class="stripe-1"></mat-card-header>
+        <img src="/images/psomas-logo_square_med.jpg" height="150" style="margin-top: -100px; margin-left: 100px;">
+
+        <!--Card Content-->
+        <mat-card-content [class.blur-content]="authenticated===false">
+
+            <!--Compensation Text and Breakdown-->
+            <div class="comp-statement">
+
+                <p class="bold-heading">{{employee?.firstname }}'s {{year}} COMPENSATION PACKAGE</p>
+                <p>Psomas is pleased to present your personalized compensation and benefit statement for {{year}}. This includes a snapshot of your salary, health benefits, and other employment perks unique to Psomas.</p>
+
+                <p>While purpose and passion drive many of us, we know compensation matters and we want to make it easy to understand. Our goal is to offer a comprehensive package that celebrates the value you bring to this company.</p>
+                <p><b>Thank you for your service and commitment to Psomas!</b></p>
+
+                <!--Display Compensation Amounts-->
+                <table cellpadding="0" cellspacing="0" class="comp-table">
+                    <ng-container *ngFor="let item of employeeCompensationData; let i = index;">
+                        <tr class="spacer" *ngIf="item.isheader===1">
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr class="comp-heading" *ngIf="item.isheader===1" [class.comp-total]="item.title.includes('Total')">
+                            <th>{{item.title}}</th>
+                            <th>{{item.amount | currency}}</th>
+                        </tr>
+                        <tr class="spacer" *ngIf="item.isheader===1">
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr *ngIf="item.isheader===0" [class.row-even]="(i%2)=== 0">
+                            <td>{{item.title}} <i *ngIf="item.description!==''">({{item.description}})</i></td>
+                            <td>{{item.amount | currency}}</td>
+                        </tr>
+                    </ng-container>
+                    <tr class="spacer">
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <!-- <td colspan="2">*The ESOP Contribution amount is based on shares contributed in {{year!-1}}. This statement will be updated when we finalize the {{year}} stock price and contributions.</td> -->
+                        <td colspan="2">*The Psomas Pshares Retirement Plan amount = (shares contributed in 2020 + shares forfeited) × $54.58 per share. This number will be updated in the summer once the 2021 share allocation and share valuation are complete.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!--Compensation Pie Chart-->
+            <div class="comp-chart">
+                <kendo-chart>
+                    <kendo-chart-legend position="left" [visible]="false"></kendo-chart-legend>
+                    <kendo-chart-series>
+                        <kendo-chart-series-item type="pie" [data]="pieData" field="value" colorField="colorcode" categoryField="category" [autoFit]="true" [labels]="{ visible: true, content: labelContent, font: '12pt bold sans-serif' }">
+                        </kendo-chart-series-item>
+                    </kendo-chart-series>
+                </kendo-chart>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>

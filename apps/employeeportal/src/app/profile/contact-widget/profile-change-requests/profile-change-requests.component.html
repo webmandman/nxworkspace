@@ -1,0 +1,3 @@
+<div *ngIf="requests | async as reqs">
+  <p *ngIf="reqs.length" class="pending-request">You have a pending {{type}} change request.</p>
+</div>

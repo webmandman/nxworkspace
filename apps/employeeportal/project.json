@@ -1,7 +1,7 @@
 {
     "projectType": "application",
     "sourceRoot": "apps/employeeportal/src",
-    "prefix": "psomas",
+    "prefix": "mynxworkspace",
     "targets": {
         "build": {
             "executor": "@angular-devkit/build-angular:browser",

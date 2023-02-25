@@ -1,4 +1,4 @@
-/********* PSOMAS CUSTOM **********/
+/********* mynxworkspace CUSTOM **********/
 
 @import './variables.scss';
 
@@ -13,30 +13,30 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$psomas-primary: mat-palette($mat-blue);
-$psomas-accent : mat-palette($mat-light-blue, A200, A100, A400);
+$mynxworkspace-primary: mat-palette($mat-blue);
+$mynxworkspace-accent: mat-palette($mat-light-blue, A200, A100, A400);
 // The warn palette is optional (defaults to red).
-$psomas-warn : mat-palette($mat-red);
+$mynxworkspace-warn: mat-palette($mat-red);
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as `color` or `typography`.
-$psomas-theme: mat-light-theme(( color: ( primary: $psomas-primary, accent: $psomas-accent, warn: $psomas-warn, )));
+$mynxworkspace-theme: mat-light-theme(( color: ( primary: $mynxworkspace-primary, accent: $mynxworkspace-accent, warn: $mynxworkspace-warn, )));
 // ALL COMPONENT STYLES
-@include angular-material-theme($psomas-theme);
+@include angular-material-theme($mynxworkspace-theme);
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 // IF you only want specific components, then start by including:
-// @include mat-core-theme($psomas-theme);
+// @include mat-core-theme($mynxworkspace-theme);
 // SPECIFIC COMPONENTS
-// @include mat-input-theme($psomas-theme);
-// @include mat-form-field-theme($psomas-theme);
-// @include mat-icon-theme($psomas-theme);
-// @include mat-button-theme($psomas-theme);
+// @include mat-input-theme($mynxworkspace-theme);
+// @include mat-form-field-theme($mynxworkspace-theme);
+// @include mat-icon-theme($mynxworkspace-theme);
+// @include mat-button-theme($mynxworkspace-theme);
 
 /*********** KENDO MATERIAL *************/
 
 $base-theme:Material;
-$skin-name:psomas;
+$skin-name:mynxworkspace;
 $swatch-name:Material;
 $border-radius: 2px;
 $primary-palette-name: blue;

@@ -1,50 +1,55 @@
 @import '../../variables';
-
-a, a:visited, a:active {
-  color:#245398 !important;
+a,
+a:visited,
+a:active {
+    color: #245398 !important;
 }
 
 .center-page {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
+
 .subject {
     font-weight: bold;
     margin-right: 13px;
 }
+
 .title {
- border-bottom: 1px solid #ccc;
- margin-bottom: 25px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 25px;
 }
+
 .title h3 {
- color: $psomas-primary-blue;
- font-size: 24px;
+    color: $mynxworkspace-primary-blue;
+    font-size: 24px;
 }
+
 @mixin personal {
-    :host {
+     :host {
         .personal-container {
-            margin:0 auto;
-            width:600px;
+            margin: 0 auto;
+            width: 600px;
         }
         .title {
-         border-bottom: 1px solid #ccc;
-         margin-bottom: 25px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 25px;
         }
         .title h3 {
-         color: $psomas-primary-blue;
+            color: $mynxworkspace-primary-blue;
         }
         .formfields {
             margin-bottom: 25px;
             padding: 0 25px;
         }
         .formfields h4 {
-            margin:0;
+            margin: 0;
         }
         .field-error {
             line-height: 18px;
             height: 18px;
             font-size: 14px;
-            color:firebrick;
+            color: firebrick;
         }
     }
 }
